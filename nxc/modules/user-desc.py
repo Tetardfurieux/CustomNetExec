@@ -2,7 +2,8 @@ from pathlib import Path
 from datetime import datetime
 from impacket.ldap import ldap, ldapasn1
 from impacket.ldap.ldap import LDAPSearchError
-
+from os.path import join
+from nxc.paths import NXC_PATH
 
 class NXCModule:
     """
@@ -91,8 +92,11 @@ class NXCModule:
     def create_log_file(self, host, time):
         """Create a log file for dumping user descriptions."""
         logfile = f"UserDesc-{host}-{time}.log"
-        logfile = Path.home().joinpath(".nxc").joinpath("logs").joinpath(logfile)
-
+        #logfile = Path.home().joinpath(".nxc").joinpath("logs").joinpath(logfile)
+        logfile = join(
+            NXC_PATH,
+            "logs",
+            logfile)
         self.context.log.info(f"Creating log file '{logfile}'")
         self.log_file = open(logfile, "w")  # noqa: SIM115
         self.append_to_log("User:", "Description:")

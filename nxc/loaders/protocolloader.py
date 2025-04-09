@@ -3,12 +3,13 @@ from importlib.machinery import SourceFileLoader
 from os import listdir
 from os.path import join as path_join
 from os.path import dirname, exists, expanduser
+from nxc.paths import NXC_PATH
 import nxc
 
 
 class ProtocolLoader:
     def __init__(self):
-        self.nxc_path = expanduser("~/.nxc")
+        self.nxc_path = NXC_PATH
 
     def load_protocol(self, protocol_path):
         loader = SourceFileLoader("protocol", protocol_path)

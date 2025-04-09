@@ -1,5 +1,6 @@
 import configparser
 import os
+from nxc.paths import NXC_PATH
 
 
 class Context:
@@ -8,10 +9,12 @@ class Context:
             setattr(self, key, value)
 
         self.db = db
-        self.log_folder_path = os.path.join(os.path.expanduser("~/.nxc"), "logs")
+        self.log_folder_path = os.path.join(NXC_PATH, "logs")
         self.localip = None
 
         self.conf = configparser.ConfigParser()
-        self.conf.read(os.path.expanduser("~/.nxc/nxc.conf"))
+        #self.conf.read(os.path.expanduser("~/.nxc/nxc.conf"))
+        self.conf.read(os.path.join(NXC_PATH, "nxc.conf"))
+
 
         self.log = logger

@@ -2,11 +2,12 @@
 # Credit to https://github.com/dirkjanm/adidnsdump @_dirkjan
 # module by @mpgn_x64
 import re
-from os.path import expanduser
+from os.path import expanduser, join
 import codecs
 import socket
 from datetime import datetime
 from struct import unpack
+from nxc.paths import NXC_PATH
 
 import dns.name
 import dns.resolver
@@ -181,7 +182,12 @@ class NXCModule:
                             )
 
         context.log.highlight(f"Found {len(outdata)} records")
-        path = expanduser(f"~/.nxc/logs/{connection.domain}_network_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.log")
+        #path = expanduser(f"~/.nxc/logs/{connection.domain}_network_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.log")
+        path = join(
+            NXC_PATH,
+            "logs",
+            f"{connection.domain}_network_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.log")       
+
         with codecs.open(path, "w", "utf-8") as outfile:
             for row in outdata:
                 if self.showhosts:
