@@ -66,7 +66,6 @@ class winrm(connection):
         if self.args.local_auth:
             self.domain = self.hostname
 
-        #self.output_filename = os.path.expanduser(f"~/.nxc/logs/{self.hostname}_{self.host}_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}".replace(":", "-"))
         self.output_filename = os.path.join(
                             NXC_PATH,
                             "logs",

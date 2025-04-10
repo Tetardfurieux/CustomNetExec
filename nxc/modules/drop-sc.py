@@ -1,6 +1,6 @@
 import ntpath
 import tempfile
-
+from nxc.paths import TMP_PATH
 
 class NXCModule:
     """
@@ -43,7 +43,7 @@ class NXCModule:
 
         self.file_path = ntpath.join("\\", f"{self.filename}.searchConnector-ms")
         if not self.cleanup:
-            self.scfile_path = f"{tempfile.gettempdir()}/{self.filename}.searchConnector-ms"
+            self.scfile_path = f"{TMP_PATH}/{self.filename}.searchConnector-ms"
             with open(self.scfile_path, "w") as scfile:
                 scfile.truncate(0)
                 scfile.write('<?xml version="1.0" encoding="UTF-8"?>')

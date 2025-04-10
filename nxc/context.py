@@ -13,7 +13,6 @@ class Context:
         self.localip = None
 
         self.conf = configparser.ConfigParser()
-        #self.conf.read(os.path.expanduser("~/.nxc/nxc.conf"))
         self.conf.read(os.path.join(NXC_PATH, "nxc.conf"))
 
 

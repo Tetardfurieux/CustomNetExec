@@ -10,6 +10,7 @@ import tempfile
 from datetime import datetime
 from nxc.helpers.bloodhound import add_user_bh
 from nxc.protocols.mssql.mssqlexec import MSSQLEXEC
+from nxc.paths import TMP_PATH
 
 
 class NXCModule:
@@ -60,7 +61,7 @@ class NXCModule:
             self.nano_path = module_options["NANO_PATH"]
             self.useembeded = False
         else:
-            self.nano_path = f"{tempfile.gettempdir()}"
+            self.nano_path = f"{TMP_PATH}"
         self.dir_result = self.nano_path
 
         if "NANO_EXE_NAME" in module_options:

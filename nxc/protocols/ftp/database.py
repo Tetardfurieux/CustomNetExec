@@ -67,7 +67,7 @@ class database(BaseDB):
                     f"""
                     [-] Error reflecting tables for the {self.protocol} protocol - this means there is a DB schema mismatch
                     [-] This is probably because a newer version of nxc is being run on an old DB schema
-                    [-] Optionally save the old DB data (`cp {self.db_path} ~/nxc_{self.protocol.lower()}.bak`)
+                    [-] Optionally save the old DB data (`cp {self.db_path} $(pwd)/nxc_{self.protocol.lower()}.bak`)
                     [-] Then remove the {self.protocol} DB (`rm -f {self.db_path}`) and run nxc to initialize the new DB"""
                 )
                 sys.exit()

@@ -9,6 +9,11 @@ current_dir = os.getcwd()
 NXC_PATH = os.path.join(current_dir, ".nxc")
 TMP_PATH = os.path.join(current_dir, "nxc_hosted")
 
+os.environ["TEMP"] = TMP_PATH
+os.environ["TMP"] = TMP_PATH
+os.environ["TMPDIR"] = TMP_PATH
+os.environ["PIP_TMPDIR"] = TMP_PATH
+os.environ["PYTHONTEMP"] = TMP_PATH
 
 '''NXC_PATH = os.path.expanduser("~/.nxc")
 if os.name == "nt":

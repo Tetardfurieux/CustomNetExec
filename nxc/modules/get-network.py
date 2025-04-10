@@ -182,7 +182,6 @@ class NXCModule:
                             )
 
         context.log.highlight(f"Found {len(outdata)} records")
-        #path = expanduser(f"~/.nxc/logs/{connection.domain}_network_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.log")
         path = join(
             NXC_PATH,
             "logs",

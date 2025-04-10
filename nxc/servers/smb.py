@@ -3,6 +3,7 @@ from threading import enumerate
 from sys import exit
 from impacket import smbserver
 from nxc.logger import nxc_logger
+from nxc.paths import TMP_PATH
 
 
 class NXCSMBServer(threading.Thread):
@@ -10,7 +11,7 @@ class NXCSMBServer(threading.Thread):
         self,
         logger,
         share_name,
-        share_path="/tmp/nxc_hosted",
+        share_path=TMP_PATH,
         listen_address="0.0.0.0",
         listen_port=445,
         verbose=False,
