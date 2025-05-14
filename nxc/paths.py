@@ -14,6 +14,9 @@ os.environ["TMP"] = TMP_PATH
 os.environ["TMPDIR"] = TMP_PATH
 os.environ["PIP_TMPDIR"] = TMP_PATH
 os.environ["PYTHONTEMP"] = TMP_PATH
+os.environ["XDG_DATA_HOME"] = TMP_PATH
+os.environ["XDG_CONFIG_HOME"] = TMP_PATH
+os.environ["XDG_CACHE_HOME"] = TMP_PATH
 
 '''NXC_PATH = os.path.expanduser("~/.nxc")
 if os.name == "nt":
