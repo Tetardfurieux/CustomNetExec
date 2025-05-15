@@ -6,7 +6,7 @@
 
 
 🚩 This is the open source repository of NetExec maintained by a community of passionate people
-# NetExec - The Network Execution Tool
+# NetExec - The Network Execution Tool - CWD only version
 
 This project was initially created in 2015 by @byt3bl33d3r, known as CrackMapExec. In 2019 @mpgn_x64 started maintaining the project for the next 4 years, adding a lot of great tools and features. In September 2023 he retired from maintaining the project.
 
