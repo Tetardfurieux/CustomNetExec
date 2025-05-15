@@ -108,7 +108,7 @@ exe = EXE(
     strip=False,
     upx=True,
     upx_exclude=[],
-    runtime_tmpdir=None,
+    runtime_tmpdir='./temp/',
     console=True,
     icon='./nxc/data/nxc.ico'
 )
